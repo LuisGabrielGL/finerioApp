@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="loginviewmodel"
+            type="com.luisgl.finerioapp.ui.viewmodel.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.view.LoginActivity"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            android:autoSizeMaxTextSize="@dimen/txt_big_max"
+            android:autoSizeMinTextSize="@dimen/txt_big_min"
+            android:autoSizeStepGranularity="@dimen/txt_steps_size"
+            android:autoSizeTextType="uniform" tools:targetApi="o"
+            android:text="@string/login_title"
+            android:textColor="@color/text_color_black"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/x_big_padding"
+            android:paddingRight="@dimen/x_big_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
+            <EditText
+                android:id="@+id/et_user"
+                style="@style/topEdTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/xx_big_padding"
+                android:autoSizeMaxTextSize="@dimen/txt_general_max"
+                android:autoSizeMinTextSize="@dimen/txt_general_min"
+                android:autoSizeStepGranularity="@dimen/txt_steps_size"
+                android:autoSizeTextType="uniform"
+                android:autofillHints=""
+                android:hint="@string/user"
+                android:inputType="text"
+                android:text="@={loginviewmodel.userId}"
+                android:textColorHighlight="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textColorLink="@color/text_color_white"
+                tools:targetApi="o" />
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/bottomEdTextTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoSizeMaxTextSize="@dimen/txt_general_max"
+                android:autoSizeMinTextSize="@dimen/txt_general_min"
+                android:autoSizeStepGranularity="@dimen/txt_steps_size"
+                android:autoSizeTextType="uniform"
+                android:autofillHints=""
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text="@={loginviewmodel.userPassword}"
+                android:textColorHighlight="@color/text_color_white"
+                android:textColorHint="@color/text_color_white"
+                android:textColorLink="@color/text_color_white"
+                tools:targetApi="o" />
+
+            <Button
+                android:id="@+id/btn_login"
+                style="@style/buttonTheme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x_big_padding"
+                android:autoSizeMaxTextSize="@dimen/txt_button_max"
+                android:autoSizeMinTextSize="@dimen/txt_button_min"
+                android:autoSizeStepGranularity="@dimen/txt_steps_size"
+                android:autoSizeTextType="uniform"
+                android:onClick="@{loginviewmodel::onLogin}"
+                android:text="@string/login"
+                android:textAllCaps="false"
+                android:textColor="@color/text_color_white"
+                tools:targetApi="o" />
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pb_login"
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">FinerioApp</string>
+
+    <!-- Login -->
+    <string name="login_title">Login Finerio</string>
+    <string name="user">Correo</string>
+    <string name="password">Contraseña</string>
+
+    <!-- Alerts -->
+    <string name="message_fail">Credenciales incorrectas</string>
+
+    <!-- Home -->
+    <string name="movements_title">Movimientos</string>
+    <string name="movements_description">Descripción</string>
+    <string name="movements_type">Tipo</string>
+    <string name="movements_amounth">Monto</string>
+
+    <!-- Error message -->
+    <string name="error_empty_fields">Campos vacíos</string>
+    <string name="error_empty_fields_message">Para continuar es necesario que agregues tus credenciales.</string>
+    <string name="error_credentials">Credenciales inválidas</string>
+    <string name="error_credentials_message">Verifica que tus credenciales sean correctas</string>
+    <string name="error_conection">Error de conexión</string>
+    <string name="error_conection_message">Hubo un error al comunicarse con el servidor</string>
+
+    <!-- Buttons -->
+    <string name="login">Iniciar Sesión</string>
+    <string name="button_ok">Ok</string>
+
+
+</resources>
